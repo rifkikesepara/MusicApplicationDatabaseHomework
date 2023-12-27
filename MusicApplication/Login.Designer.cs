@@ -51,6 +51,7 @@
             passwordBox.PlaceholderText = "Password";
             passwordBox.Size = new Size(251, 43);
             passwordBox.TabIndex = 1;
+            passwordBox.UseSystemPasswordChar = true;
             // 
             // loginButton
             // 

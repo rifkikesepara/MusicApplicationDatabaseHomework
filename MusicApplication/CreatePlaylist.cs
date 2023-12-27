@@ -49,11 +49,14 @@ namespace MusicApplication
 
                 Form1.databaseConection.Open();
                 playlistNameBox.Text = selectedPlaylist;
-                command = new NpgsqlCommand("SELECT s.song_name FROM playlist_song as ps INNER JOIN songs as s ON ps.song_id = s.song_id WHERE ps.playlist_id = "+playlistID, Form1.databaseConection);
+                command = new NpgsqlCommand("SELECT s.song_name,s.release_date FROM playlist_song as ps INNER JOIN songs as s ON ps.song_id = s.song_id WHERE ps.playlist_id = "+playlistID, Form1.databaseConection);
                 reader=command.ExecuteReader();
                 while(reader.Read())
                 {
-                    playlistView.Items.Add(reader[0].ToString());
+                     ListViewItem listViewItem = new ListViewItem();
+                    listViewItem.Text=reader.GetString(0);
+                    listViewItem.SubItems.Add(reader[1].ToString());
+                    playlistView.Items.Add(listViewItem);
                 }
                 Form1.databaseConection.Close();
 
