@@ -26,7 +26,7 @@ namespace MusicApplication
             if (Form1.state == PlaylistState.Create)
             {
                 Text = "Create Playlist";
-                NpgsqlCommand command = new NpgsqlCommand("SELECT s.song_name,s.release_date from songs as s", Form1.databaseConection);
+                NpgsqlCommand command = new NpgsqlCommand("SELECT s.song_name,s.release_date,s.song_id from songs as s", Form1.databaseConection);
                 var reader = command.ExecuteReader();
 
                 while (reader.Read())

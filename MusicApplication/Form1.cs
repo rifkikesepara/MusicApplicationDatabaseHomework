@@ -25,6 +25,7 @@ namespace MusicApplication
         private void Form1_Load(object sender, EventArgs e)
         {
             logOutButton.Visible = false;
+            ViewSongsbutton.Visible = false;
             pictureBox1.Visible = false;
             label1.Visible = false;
             playlistViewList.Visible = false;
@@ -67,11 +68,15 @@ namespace MusicApplication
             playlistViewList.Visible = false;
             logOutButton.Visible = false;
             usernameLabel.Visible = false;
+             ViewSongsbutton.Visible = false;
+
+            Logged = false;
         }
 
         public void LoggedIn()
         {
-            usernameLabel.Visible=true;
+            usernameLabel.Visible = true;
+            ViewSongsbutton.Visible = true;
             logOutButton.Visible = true;
             pictureBox1.Visible = true;
             button1.Visible = false;
@@ -133,6 +138,12 @@ namespace MusicApplication
         private void logOutButton_Click(object sender, EventArgs e)
         {
             LoggedOut();
+        }
+
+        private void ViewSongsbutton_Click(object sender, EventArgs e)
+        {
+            SongLists newForm=new SongLists();
+            newForm.ShowDialog();
         }
     }
 }

@@ -37,6 +37,7 @@
             label1 = new Label();
             logOutButton = new Button();
             pictureBox1 = new PictureBox();
+            ViewSongsbutton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -120,15 +121,26 @@
             pictureBox1.TabIndex = 12;
             pictureBox1.TabStop = false;
             // 
+            // ViewSongsbutton
+            // 
+            ViewSongsbutton.Location = new Point(12, 16);
+            ViewSongsbutton.Name = "ViewSongsbutton";
+            ViewSongsbutton.Size = new Size(105, 59);
+            ViewSongsbutton.TabIndex = 13;
+            ViewSongsbutton.Text = "View Songs";
+            ViewSongsbutton.UseVisualStyleBackColor = true;
+            ViewSongsbutton.Click += ViewSongsbutton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(ViewSongsbutton);
+            Controls.Add(playlistViewList);
             Controls.Add(pictureBox1);
             Controls.Add(logOutButton);
             Controls.Add(label1);
-            Controls.Add(playlistViewList);
             Controls.Add(createPlaylistButton);
             Controls.Add(usernameLabel);
             Controls.Add(button2);
@@ -153,5 +165,6 @@
         private Label label1;
         private Button logOutButton;
         private PictureBox pictureBox1;
+        private Button ViewSongsbutton;
     }
 }

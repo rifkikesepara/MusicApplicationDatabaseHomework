@@ -44,7 +44,7 @@ namespace MusicApplication
             command.ExecuteNonQuery();
             Form1.databaseConection.Close();
             MessageBox.Show("Successfully signed up!");
-            this.Close();
+            Close();
         }
     }
 }
